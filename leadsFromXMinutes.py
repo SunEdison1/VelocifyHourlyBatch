@@ -16,7 +16,7 @@ import threading
 reload(sys);
 sys.setdefaultencoding("utf-8");
  
-conn_string = "dbname='sunedison' port='5439' user='abhardwaj' password='Master12' host='sunedisondatawarehouse.cgnr3c8sn1sz.us-west-2.redshift.amazonaws.com'";
+conn_string = "dbname='sunedison' port='5439' user='XXXX' password='XXXX' host='sunedisondatawarehouse.cgnr3c8sn1sz.us-west-2.redshift.amazonaws.com'";
 print "Connecting to database";
 conn = psycopg2.connect(conn_string);
 print "Connected to database";
@@ -49,7 +49,7 @@ def calculateDifferenceInTimestamps(systemTimestamp, modifydate):
 	return difference
 
 def leadExtraction(differenceInMinutes):
-	url = "https://service.leads360.com/ClientService.asmx/GetLeadsSpan?username=abhardwaj@sunedison.com&password=F9nuvdgetu4?&fromNowMinutes=%s"%differenceInMinutes
+	url = "https://service.leads360.com/ClientService.asmx/GetLeadsSpan?username=XXXX@sunedison.com&password=XXXX?&fromNowMinutes=%s"%differenceInMinutes
 	r = requests.get(url);
 	output = xmltodict.parse(r.content);
 	try:
